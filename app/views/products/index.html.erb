@@ -1,33 +1,55 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Products</h1>
+<div class="row">
+  <h1>Product Catalog</h1>
+  <h4>Click on the buttons to view, edit, delete, or create a new product</h3>
+    <div class="col-md-1">
+      Picture
+    </div>
+    <div class="col-md-1">
+      Title
+    </div>
+    <div class="col-md-6">
+      Description
+    </div>
+    <div class="col-md-2">
+      Category
+    </div>
+    <div class="col-md-2">
+      Price
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= product.description %></td>
-        <td><%= product.price %></td>
-        <td><%= product.category %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</div>
+<% @products.each do |product| %>
+  <div class="row">
+    <div class="entry">
+      <div class="col-md-1">
+        <%= image_tag(product.image_url, class:"list_image") %>
+      </div>
+      <div class="col-md-2">
+        <%= product.title %>
+      </div>
+      <div class="col-md-5">
+        <%= product.description %>
+      </div>
+      <div class="col-md-2">
+        <%= product.category %>
+      </div>
+      <div class="col-md-2">
+        <%= product.price %>
+      </div>
+      <br>
+    </div>
+    <%= link_to 'Show', product, class:"btn btn-primary btn-sm" %>
+    <%= link_to 'Edit', edit_product_path(product), class:"btn btn-warning btn-sm" %>
+    <%= link_to 'Delete', product ,class:"btn btn-danger btn-sm", method: :delete, data: {confirm: 'Are you sure?'} %>
+  </div>
+<% end %>
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+<div class="row">
+  <%= link_to fa_icon("plus") + " New Product", new_product_path, class:"btn btn-success btn" %>
+</div>
+
+<br>

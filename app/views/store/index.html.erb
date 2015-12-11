@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <h1>Product Catalog</h1>
+    <div class="col-md-1">
+      Picture
+    </div>
+    <div class="col-md-1">
+      Title
+    </div>
+    <div class="col-md-6">
+      Description
+    </div>
+    <div class="col-md-2">
+      Category
+    </div>
+    <div class="col-md-2">
+      Price
+    </div>
+
+</div>
+<% @products.each do |product| %>
+  <div class="row">
+    <div class="entry">
+      <div class="col-md-1">
+        <%= image_tag(product.image_url, class:"list_image") %>
+      </div>
+      <div class="col-md-2">
+        <%= product.title %>
+      </div>
+      <div class="col-md-4">
+        <%= product.description %>
+      </div>
+      <div class="col-md-2">
+        <%= product.category %>
+      </div>
+      <div class="col-md-1">
+        <strong><%= number_to_currency(product.price) %></strong>
+      </div>
+    </div>
+  </div>
+  <% end %>
