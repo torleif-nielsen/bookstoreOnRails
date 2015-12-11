@@ -2,12 +2,6 @@
 
 one:
   title: MyString
-  description: MyText
-  price: 9.99
-  category: MyString
 
 two:
   title: MyString
-  description: MyText
-  price: 9.99
-  category: MyString
