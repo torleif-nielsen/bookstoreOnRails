@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
 
-<div class="row">
+<div class="row col-md-9">
+  <p id="notice"><%= notice %></p>
   <h1>Product Catalog</h1>
     <div class="col-md-1">
       Picture
     </div>
-    <div class="col-md-1">
+    <div class="col-md-2">
       Title
     </div>
-    <div class="col-md-6">
+    <div class="col-md-4">
       Description
     </div>
     <div class="col-md-2">
@@ -19,6 +19,7 @@
     </div>
 
 </div>
+<div class="col-md-9" id="storeListing">
 <% @products.each do |product| %>
   <div class="row">
     <div class="entry">
@@ -35,8 +36,16 @@
         <%= product.category %>
       </div>
       <div class="col-md-1">
-        <strong><%= number_to_currency(product.price) %></strong>
+        <strong><%= number_to_currency(product.price) %></strong><br>
+        <%= button_to 'Add to Cart', cart_items_path(product_id: product), remote: true, class:"btn btn-success btn-xs" %>
       </div>
     </div>
   </div>
   <% end %>
+</div>
+
+<div class="col-md-3" id="sideBar">
+  <div id="cart">
+    <%= render @cart %>
+  </div>
+</div>
