@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'books/index', as: 'books'
+
+  get 'supplies/index', as: 'supplies'
+
+  get 'apparel/index', as: 'apparel'
+
+  get 'computers/index', as: 'computers'
+
   resources :orders
   resources :cart_items
   resources :carts

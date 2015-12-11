@@ -10,6 +10,12 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">Bookstore On Rails</a>
+      <ul class="nav navbar-nav">
+        <li><%= link_to 'Books', books_path %></li>
+        <li><%= link_to 'Computers', computers_path %></li>
+        <li><%= link_to 'Supplies', supplies_path %></li>
+        <li><%= link_to 'Apparel', apparel_path %></li>
+      </ul>
     </div>
   </nav>
   <div class="container">
