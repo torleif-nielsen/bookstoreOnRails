@@ -18,9 +18,6 @@ gem 'therubyracer', platforms: :ruby
 gem 'bootstrap-sass'
 # Install font-awesome library
 gem 'font-awesome-rails'
-# Install simple-form
-# Use simple form with bootstrap like this: = simple_form_for(@user, html: { class: 'form-horizontal' }) do |form|
-gem 'simple_form'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
