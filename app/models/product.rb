@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   }
 
   has_many :cart_items
-  before_destroy :ensure_not_referenced_by_any_cart_item
+  #before_destroy :ensure_not_referenced_by_any_cart_item
 
   private
 
