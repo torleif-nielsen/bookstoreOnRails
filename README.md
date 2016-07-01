@@ -1,3 +1,5 @@
+# This is not an active project, this was a quick Rails project I did to gain some familiarity with Rails for a University class.
+
 # bookstoreOnRails
 Basic implementation of a modern university bookstore/supply store.
 
